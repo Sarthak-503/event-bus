@@ -18,7 +18,10 @@ app.post("/events", (req, res) => {
   axios.post("http://localhost:4002/events", event).catch((err) => {
     console.log(err.message);
   });
-  // these endpoint are postsService, commentsService, queryService
+  axios.post("http://localhost:4003/events", event).catch((err) => {
+    console.log(err.message);
+  });
+  // these endpoint are postsService, commentsService, queryService,moderationService
   res.send({
     status: "Ok",
   });
